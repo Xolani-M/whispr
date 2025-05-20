@@ -6,6 +6,15 @@
 
 🌐 **Live Demo**: [Whispr on GitHub Pages](https://xolani-m.github.io/whispr/)
 
+
+---
+
+## 📐 Wireframes
+
+Explore the user interface plan and wireframes on Figma:  
+🔗 [Whispr Wireframes (Figma Community)](https://www.figma.com/community/file/1506604130928254870)
+
+
 ---
 
 ## ✨ Features
