@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Login & Registration Form</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="../styles/signin.css">
+  <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700,800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <header>
+    
+  </header>
+
+  <main>
+    <div class="cont" role="main">
+      <section class="form sign-in" aria-labelledby="sign-in-heading">
+        <h2 id="sign-in-heading">Sign In</h2>
+        <form id="signin-form">
+          <label for="signin-email">
+            <div>Email Address</div>
+            <input type="email" id="signin-email" name="email" required>
+          </label>
+          <label for="signin-password">
+            <div>Password</div>
+            <input type="password" id="signin-password" name="password" required>
+          </label>
+          <button class="submit" type="submit">Sign In</button>
+        </form>
+      </section>
+
+      <section class="sub-cont">
+        <div class="img" aria-hidden="true">
+          <div class="img-text m-up">
+            <h1>New here?</h1>
+            <p>Sign up and discover</p>
+          </div>
+          <div class="img-text m-in">
+            <h1>One of us?</h1>
+            <p>Just sign in</p>
+          </div>
+          <div class="img-btn">
+            <div class="m-up">Sign Up</div>
+            <div class="m-in">Sign In</div>
+          </div>
+        </div>
+
+        <section class="form sign-up" aria-labelledby="sign-up-heading">
+          <h2 id="sign-up-heading">Sign Up</h2>
+          <form id="signup-form">
+            <label for="signup-name">
+              <div>Name</div>
+              <input type="text" id="signup-name" name="name" required>
+            </label>
+            <label for="signup-email">
+              <div>Email</div>
+              <input type="email" id="signup-email" name="email" required>
+            </label>
+            <label for="signup-password">
+              <div>Password</div>
+              <input type="password" id="signup-password" name="password" required>
+            </label>
+            <label for="signup-confirm-password">
+              <div>Confirm Password</div>
+              <input type="password" id="signup-confirm-password" name="confirm-password" required>
+            </label>
+            <button type="submit" class="submit">Sign Up Now</button>
+          </form>
+        </section>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+  
+  </footer>
+
+  <script src="../js/signin.js"></script>
+
+  <script>
+
+    
+  </script>
+</body>
+</html>
