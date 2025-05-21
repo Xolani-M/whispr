@@ -34,7 +34,16 @@ document.addEventListener('DOMContentLoaded', function () {
       const parsedUser = JSON.parse(userData);
 
       if (parsedUser.password === password) {
-        localStorage.setItem('currentUser', JSON.stringify(parsedUser));
+        // Set current user and online status
+        const currentUser = {
+          name: parsedUser.name,
+          email: parsedUser.email
+        };
+        
+        localStorage.setItem('currentUser', JSON.stringify(currentUser));
+        localStorage.setItem(`user_status_${email}`, 'online');
+        localStorage.removeItem(`last_seen_${email}`);
+        
         alert('Login successful!');
         window.location.href = '../index.html';
       } else {
@@ -68,15 +77,23 @@ document.addEventListener('DOMContentLoaded', function () {
         return;
       }
 
-      const user = { name, email, password };
+      const user = { 
+        name, 
+        email, 
+        password,
+        contacts: [] // Initialize empty contacts array
+      };
+      
       localStorage.setItem(email, JSON.stringify(user));
-      alert('Registration successful.');
-
-      signupForm.reset();
-
-      if (cont) {
-        cont.classList.remove('s-signup'); // Switch to sign-in form
-      }
+      
+      // Set user as online immediately after signup
+      localStorage.setItem(`user_status_${email}`, 'online');
+      
+      alert('Registration successful. You are now logged in!');
+      
+      // Automatically log in the new user
+      localStorage.setItem('currentUser', JSON.stringify({ name, email }));
+      window.location.href = '../index.html';
     });
   }
 });
