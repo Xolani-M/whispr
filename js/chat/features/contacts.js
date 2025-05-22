@@ -23,7 +23,7 @@ export function initializeContacts(currentUser) {
 
     // Process potential user data
     const userData = safelyParseUserData(item);
-    if (userData && !contactEmails.has(userData.email)) {
+    if (userData && !contactEmails.has(userData.email) && userData.email !== currentUser.email ) {
       contacts.push(createContactObject(userData));
       contactEmails.add(userData.email);
     }
@@ -35,7 +35,7 @@ export function initializeContacts(currentUser) {
   );
   
   userContacts.forEach(contact => {
-    if (contact.isGroup || !contactEmails.has(contact.email)) {
+    if (contact.isGroup || !contactEmails.has(contact.email)  && contact.email !== currentUser.email) {
       contacts.push(contact.isGroup ? 
         contact : 
         createContactObject(contact)
