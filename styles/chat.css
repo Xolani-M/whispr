@@ -753,3 +753,56 @@ header {
   background: #a8a8a8;
 }
 
+/* ===== RESPONSIVE DESIGN ===== */
+@media screen and (max-width: 768px) {
+  .chat-container {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    height: auto;
+    border-right: none;
+    border-bottom: 1px solid var(--border-color);
+  }
+
+  .chat-area {
+    height: calc(100vh - 300px); /* approximate sidebar height */
+  }
+
+  .message-input-container {
+    left: 0;
+    right: 0;
+    width: 100%;
+  }
+
+  .new-chat-btn {
+    position: fixed;
+    left: 5%;
+    bottom: 16px;
+    width: 90%;
+    max-width: none;
+    transform: none;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .contact-avatar {
+    width: 30px;
+    height: 30px;
+    font-size: 14px;
+  }
+
+  .contact-name {
+    font-size: 14px;
+  }
+
+  .contact-last-message {
+    font-size: 11px;
+  }
+
+  .modal-content {
+    width: 95%;
+    max-width: none;
+  }
+}
