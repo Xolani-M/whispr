@@ -1,26 +1,120 @@
-<!DOCTYPE html> 
-<html lang="en"> 
-<head>   
-  <meta charset="UTF-8">   
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">   
-  <title>Wispr chat-app</title>
-  <link rel="stylesheet" href="./styles/logout.css">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Whispr Chat</title>
+  <link rel="stylesheet" href="./styles/chat.css">
   <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700,800&display=swap" rel="stylesheet">
-</head> 
-<body>  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="icon" href="./assets/images/whispr_icon.PNG" type="image/png">
+</head>
+<body>
   <header>
     <div class="logout-container">
       <button id="logout-button" class="logout-btn">
-        <div>Logout</div>
-        <div class="icon">➜</div>
+        <i class="fas fa-sign-out-alt"></i> Logout
       </button>
     </div>
   </header>
 
-  <main>
-    <!-- Your chat app content here -->
-  </main>
+  <div class="chat-container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="app-brand">
+        <img src="./assets/images/whispr_icon.PNG" alt="Whispr Logo" class="app-icon">
+        <h1>Whispr</h1>
+      </div>
+      
+      <div class="search-container">
+        <i class="fas fa-search"></i>
+        <input type="text" id="search-conversations" placeholder="Search conversations...">
+      </div>
+      
+      <div class="contacts-section">
+        <h3><i class="fas fa-circle online-icon"></i> ONLINE</h3>
+        <div class="contacts-list" id="online-contacts"></div>
+      </div>
+      
+      <div class="contacts-section">
+        <h3><i class="fas fa-users"></i> ALL CONTACTS</h3>
+        <div class="contacts-list" id="all-contacts"></div>
+      </div>
+      
+      <button class="new-chat-btn" id="new-chat-btn">
+        <i class="fas fa-plus"></i> New Chat
+      </button>
+    </aside>
+
+    <!-- Main Chat Area -->
+    <main class="chat-area">
+      <div class="chat-header">
+        <div class="user-info">
+          <h2 id="current-chat-name">Select a chat</h2>
+          <div id="current-user">Logged in as: <span id="logged-in-user"></span></div>
+        </div>
+        <div id="chat-status"></div>
+      </div>
+      
+      <div class="messages-container" id="messages-container">
+        <div class="empty-state">
+          <i class="fas fa-comments"></i>
+          <p>Select a chat to start messaging</p>
+        </div>
+      </div>
+      
+      <div class="message-input-container">
+        <input type="text" id="message-input" placeholder="Type a message..." disabled>
+        <button id="send-button" disabled>
+          <i class="fas fa-paper-plane"></i>
+        </button>
+      </div>
+    </main>
+
+    <!-- Modals -->
+    <div class="modal" id="new-chat-modal">
+      <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <h3>Create New Chat</h3>
+        <div class="modal-options">
+          <button id="new-private-chat" class="modal-option-btn">
+            <i class="fas fa-user-friends"></i>
+            <div>
+              <h4>Private Chat</h4>
+              <p>Message one person</p>
+            </div>
+          </button>
+          <button id="new-group-chat" class="modal-option-btn">
+            <i class="fas fa-users"></i>
+            <div>
+              <h4>Group Chat</h4>
+              <p>Message multiple people</p>
+            </div>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal" id="add-users-modal">
+      <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <h3 id="add-users-title">Add Users</h3>
+        <div class="search-users-container">
+          <i class="fas fa-search"></i>
+          <input type="text" id="search-users" placeholder="Search contacts...">
+        </div>
+        <div class="user-selection"></div>
+        <div class="modal-footer">
+          <button id="cancel-add-users">Cancel</button>
+          <button id="confirm-add-users">Create</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- <script src="./js/chat.js"></script> -->
+  <script type="module" src="./js/chat/index.js"></script>
 
   <script src="./js/logout.js"></script>
-</body> 
+</body>
 </html>
